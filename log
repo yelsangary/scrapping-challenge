@@ -1,0 +1,135 @@
+2022-02-10 22:34:56 [scrapy.utils.log] INFO: Scrapy 2.3.0 started (bot: scrapybot)
+2022-02-10 22:34:56 [scrapy.utils.log] INFO: Versions: lxml 4.7.1.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.1.0, Python 3.9.2 (tags/v3.9.2:1a79785, Feb 19 2021, 13:44:55) [MSC v.1928 64 bit (AMD64)], pyOpenSSL 22.0.0 (OpenSSL 1.1.1m  14 Dec 2021), cryptography 36.0.1, Platform Windows-10-10.0.19041-SP0
+2022-02-10 22:34:56 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2022-02-10 22:34:56 [scrapy.crawler] INFO: Overridden settings:
+{'LOG_FILE': 'log', 'SPIDER_LOADER_WARN_ONLY': True}
+2022-02-10 22:34:56 [scrapy.extensions.telnet] INFO: Telnet Password: bfe078e2ecf4d3e2
+2022-02-10 22:34:56 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2022-02-10 22:34:56 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-02-10 22:34:56 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-02-10 22:34:56 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2022-02-10 22:34:56 [scrapy.core.engine] INFO: Spider opened
+2022-02-10 22:34:56 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-02-10 22:34:56 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-02-10 22:34:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://londonrelocation.com/properties-to-rent/> (referer: None)
+2022-02-10 22:34:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://londonrelocation.com/properties-to-rent/> (referer: https://londonrelocation.com/properties-to-rent/)
+2022-02-10 22:34:59 [scrapy.dupefilters] DEBUG: Filtered duplicate request: <GET https://londonrelocation.com/our-properties-to-rent/properties/> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2022-02-10 22:35:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://londonrelocation.com/our-properties-to-rent/properties/?keyword=battersea+park> (referer: https://londonrelocation.com/properties-to-rent/)
+2022-02-10 22:35:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://londonrelocation.com/our-properties-to-rent/properties/?keyword=battersea+park>
+{'price': '2384', 'title': '\nPrince of Wales Drive, Battersea Park, SW8'}
+2022-02-10 22:35:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://londonrelocation.com/our-properties-to-rent/properties/?keyword=ascot> (referer: https://londonrelocation.com/properties-to-rent/)
+2022-02-10 22:35:03 [scrapy.core.scraper] DEBUG: Scraped from <200 https://londonrelocation.com/our-properties-to-rent/properties/?keyword=ascot>
+{'price': '3500', 'title': '\nBoleyn Mews, Ascot, Berkshire, SL5'}
+2022-02-10 22:35:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://londonrelocation.com/our-properties-to-rent/properties/?keyword=battersea> (referer: https://londonrelocation.com/properties-to-rent/)
+2022-02-10 22:35:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://londonrelocation.com/our-properties-to-rent/properties/?keyword=battersea>
+{'price': '2200', 'title': '\nSullivan Close, Battersea, SW11'}
+2022-02-10 22:35:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://londonrelocation.com/our-properties-to-rent/properties/?keyword=northgate> (referer: https://londonrelocation.com/properties-to-rent/)
+2022-02-10 22:35:04 [scrapy.core.scraper] ERROR: Spider error processing <GET https://londonrelocation.com/our-properties-to-rent/properties/?keyword=northgate> (referer: https://londonrelocation.com/properties-to-rent/)
+Traceback (most recent call last):
+  File "c:\users\youssef\pycharmprojects\pythonproject\venv\lib\site-packages\twisted\internet\defer.py", line 857, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "C:\Users\Youssef\PycharmProjects\pythonProject\londonrelocation.py", line 24, in parse_area_pages
+    title = response.css('.h4-space a::text')[0].extract()
+  File "c:\users\youssef\pycharmprojects\pythonproject\venv\lib\site-packages\parsel\selector.py", line 70, in __getitem__
+    o = super(SelectorList, self).__getitem__(pos)
+IndexError: list index out of range
+2022-02-10 22:35:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://londonrelocation.com/our-properties-to-rent/properties/?keyword=balham> (referer: https://londonrelocation.com/properties-to-rent/)
+2022-02-10 22:35:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://londonrelocation.com/our-properties-to-rent/properties/?keyword=aldgate> (referer: https://londonrelocation.com/properties-to-rent/)
+2022-02-10 22:35:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://londonrelocation.com/our-properties-to-rent/properties/?keyword=barnsbury> (referer: https://londonrelocation.com/properties-to-rent/)
+2022-02-10 22:35:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://londonrelocation.com/our-properties-to-rent/properties/?keyword=balham>
+{'price': '1800', 'title': '\nRosethorn Close Balham SW12'}
+2022-02-10 22:35:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://londonrelocation.com/our-properties-to-rent/properties/?keyword=angel> (referer: https://londonrelocation.com/properties-to-rent/)
+2022-02-10 22:35:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://londonrelocation.com/our-properties-to-rent/properties/?keyword=aldgate>
+{'price': '4334', 'title': '\nWhitechapel High Street, Aldgate, E1'}
+2022-02-10 22:35:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://londonrelocation.com/our-properties-to-rent/properties/?keyword=barnsbury>
+{'price': '1300', 'title': '\nBarnsbury Road, Angel, N1'}
+2022-02-10 22:35:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://londonrelocation.com/our-properties-to-rent/properties/?keyword=angel>
+{'price': '1750', 'title': '\nDuncan Street Angel N1'}
+2022-02-10 22:35:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://londonrelocation.com/our-properties-to-rent/properties/?keyword=north+greenwich> (referer: https://londonrelocation.com/properties-to-rent/)
+2022-02-10 22:35:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://londonrelocation.com/our-properties-to-rent/properties/?keyword=north+greenwich>
+{'price': '2500', 'title': '\nWaterview Drive, North Greenwich, SE10'}
+2022-02-10 22:35:06 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2022-02-10 22:35:06 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2022-02-10 22:35:06 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2022-02-10 22:35:06 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in https://londonrelocation.com/our-properties-to-rent/properties/?keyword=maida+vale. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2022-02-10 22:35:06 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://londonrelocation.com/our-properties-to-rent/properties/?keyword=maida+vale> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'CHUNK_LENGTH' state, still expecting more data to get to 'FINISHED' state.>]
+2022-02-10 22:35:06 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in https://londonrelocation.com/our-properties-to-rent/properties/?keyword=marylebone. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2022-02-10 22:35:06 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://londonrelocation.com/our-properties-to-rent/properties/?keyword=marylebone> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'CHUNK_LENGTH' state, still expecting more data to get to 'FINISHED' state.>]
+2022-02-10 22:35:29 [scrapy.utils.log] INFO: Scrapy 2.3.0 started (bot: scrapybot)
+2022-02-10 22:35:29 [scrapy.utils.log] INFO: Versions: lxml 4.7.1.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.1.0, Python 3.9.2 (tags/v3.9.2:1a79785, Feb 19 2021, 13:44:55) [MSC v.1928 64 bit (AMD64)], pyOpenSSL 22.0.0 (OpenSSL 1.1.1m  14 Dec 2021), cryptography 36.0.1, Platform Windows-10-10.0.19041-SP0
+2022-02-10 22:35:29 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2022-02-10 22:35:29 [scrapy.crawler] INFO: Overridden settings:
+{'LOG_FILE': 'log', 'SPIDER_LOADER_WARN_ONLY': True}
+2022-02-10 22:35:29 [scrapy.extensions.telnet] INFO: Telnet Password: 795b3431053a9837
+2022-02-10 22:35:29 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2022-02-10 22:35:29 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-02-10 22:35:29 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-02-10 22:35:29 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2022-02-10 22:35:29 [scrapy.core.engine] INFO: Spider opened
+2022-02-10 22:35:29 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-02-10 22:35:29 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-02-10 22:35:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://londonrelocation.com/properties-to-rent/> (referer: None)
+2022-02-10 22:35:30 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2022-02-10 22:35:30 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2022-02-10 22:35:30 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 239,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 15831,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 1.093495,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2022, 2, 10, 20, 35, 30, 471245),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 11,
+ 'request_depth_max': 1,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2022, 2, 10, 20, 35, 29, 377750)}
+2022-02-10 22:35:30 [scrapy.core.engine] INFO: Spider closed (shutdown)
